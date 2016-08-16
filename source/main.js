@@ -10,6 +10,9 @@ let users = 0;
 
 io.on('connection', function (socket){
   users++;
+  socket.on('disconnect', function(){
+    users--;
+  });
   console.log(`There are ${users} current users`);
 });
 
