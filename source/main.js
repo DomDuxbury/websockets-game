@@ -2,16 +2,17 @@
 
 const koa = require('koa');
 const app = koa();
+const server = require('http').createServer(app.callback());
+const io = require('socket.io')(server);
 
 let users = 0;
 
-app.use(function *(next) {
-  users++
-  yield next
-})
+io.on('connection', function (socket){
+  console.log('hi')
+});
 
 app.use(function *() {
   this.body = `There are ${users} current users`;
 });
  
-app.listen(3000);
+server.listen(3000);
