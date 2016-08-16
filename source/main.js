@@ -9,11 +9,8 @@ const io = require('socket.io')(server);
 
 
 let users = 0;
-app.use(views(__dirname + '/client/views', {
-  map: {
-    html: 'handlebars'
-  }
-}));
+
+app.use(serve(__dirname + '/client'))
 
 io.on('connection', function (socket){
   
@@ -25,12 +22,6 @@ io.on('connection', function (socket){
     console.log(`There are ${users} current users`);
   });
   
-});
-
-app.use(function *() {
-  yield this.render('user', {
-    user: users
-  });
 });
  
 server.listen(3000);
