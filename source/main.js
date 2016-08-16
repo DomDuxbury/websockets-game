@@ -3,8 +3,14 @@
 const koa = require('koa');
 const app = koa();
 
+let users = 0;
+
+app.use(function *(next) {
+  users++
+  yield next
+})
+
 app.use(function *() {
-  let users = 0;
   this.body = `There are ${users} current users`;
 });
  
