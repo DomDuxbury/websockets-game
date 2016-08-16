@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DomDuxbury/websockets-game/issues"
   },
-  "homepage": "https://github.com/DomDuxbury/websockets-game#readme"
+  "homepage": "https://github.com/DomDuxbury/websockets-game#readme",
+  "dependencies": {
+    "koa": "^1.2.1"
+  }
 }
