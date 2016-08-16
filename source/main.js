@@ -29,7 +29,7 @@ io.on('connection', function (socket){
 
 app.use(function *() {
   yield this.render('user', {
-    user: 'John'
+    user: users
   });
 });
  
