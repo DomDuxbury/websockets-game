@@ -3,7 +3,6 @@
 const koa = require('koa');
 const app = koa();
 const serve = require('koa-static');
-const views = require('koa-views');
 const server = require('http').createServer(app.callback());
 const io = require('socket.io')(server);
 
