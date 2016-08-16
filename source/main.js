@@ -13,7 +13,7 @@ io.on('connection', function (socket){
   console.log(`There are ${users} current users`);
 });
 
-app.use(serve('/client'));
+app.use(serve(__dirname + '/client', {defer: true}));
 
 app.use(function *() {
   console.log('hi')
